@@ -99,7 +99,7 @@ def calculer_prochain_round(self):
         round_one = Round("round 1 |", 1, list_of_matches)
         self.list_of_rounds.append(round_one)
         self.add_adversaire()
-        self.continu_round = + 1
+        self.continu_round += 1
 
     else:
         sorted_players = sorted(self.score.items(),
@@ -116,8 +116,27 @@ def calculer_prochain_round(self):
                                self.adversaire_round, list_of_matches)
         self.list_of_round.append(next_round)
         self.add_daversaires()
-        self.continu_round = + 1
+        self.continu_round += 1
 
 
 def add_adversaire(self):
     """ Ajouter les adversaires avec le match du dernier tour"""
+
+
+for match in self.list_of_round[-1].list_of_matches:
+    # vérifier si match.id_joueur_2 n'est pas dans les adversaires de match.id_joueur_1
+    if not self.adversaires[match.id_player_1].count(match.id_player_2):
+        self.adversaires[match.id_player_1].append(match.id_player_2)
+        # vérifier si match.id_player_1 n'est pas dans les adversaires de match.id_player_2
+        if not self.adversairs[match.id_player_2].count(match.id_player_1):
+            self.adversairs[match.id_player_2].append(match.id_player_1)
+
+
+def end_round(self):
+    """finir le round et mettre à jour le score.
+    """
+    self.list_of_round[-1].round_ended()
+    list_round = self.continu_round - 1
+    for match in self.list_of_rounds[last_round - 1].list_of_matches:
+        self.scores[match.id_player_1][0] += match.score_player_1
+        self.scores[match.id_player_2][0] += match.score_player_2
