@@ -86,3 +86,38 @@ def calculer_prochain_round(self):
     """ Appariement des joueurs pour le prochain tour,
         en fonction du classement pour le premier tour, puis en fonction du score""
     """
+    if self.adversaires_round == 1:
+        self.player = sorted(self.players, key=player.get_rating, reverse=True)
+
+        first_half = self.players[:4]
+        second_half = self.players[4:]
+        list_of_matches = []
+
+    for player_1, player_2 in zip(first_halh, second_half):
+        match = Match('On going', player_1.id, player_2.id)
+        list_of_matches.append(match)
+        round_one = Round("round 1 |", 1, list_of_matches)
+        self.list_of_rounds.append(round_one)
+        self.add_adversaire()
+        self.continu_round = + 1
+
+    else:
+        sorted_players = sorted(self.score.items(),
+
+                                key=lambda item: (item[0][1], item[1][1]),
+                                reverse=True)
+
+        list_of_matches = []
+        matches = get_matches(sorted_players, self.adversaires)
+        for pair in matches:
+            match = Match('On going', pair[0][0], pair[0][1])
+            list_of_matches.append(match)
+            next_round = Round(f'round,{self.adversaire_round} |',
+                               self.adversaire_round, list_of_matches)
+        self.list_of_round.append(next_round)
+        self.add_daversaires()
+        self.continu_round = + 1
+
+
+def add_adversaire(self):
+    """ Ajouter les adversaires avec le match du dernier tour"""
