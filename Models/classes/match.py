@@ -1,5 +1,6 @@
 class Match:
-    """ Create a match betwen 2 players"""
+    """Créer un tournoi entre 2 joueurs
+    """
 
     def __init__(self, status, id_player_1, id_player_2, score_player_1=0, score_player_2=0, ):
         self.status = status
@@ -14,7 +15,11 @@ class Match:
             f'Player {self.id_player_2} ({self.score_player_2, pts})'
 
     def scoring(self, winner):
-        """ """
+        """choisir un gagnant sur la base de l'ID du joueur et
+            mettre à jour le statut de la manche
+
+        """
+
         if self.id_player_1 == winner:
             self.score_player_1 = 1
 

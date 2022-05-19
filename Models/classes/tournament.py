@@ -74,7 +74,7 @@ class Tournament:
         return seliazed_tournament
 
 
-def add_palyer(self):
+def add_player(self):
     """Ajouter les joueurs dans notre liste des joueurs
     """
     self.players.append(Player)

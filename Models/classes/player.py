@@ -1,5 +1,5 @@
 class Player:
-    """ Model representing the chess player in tournament """
+    """ Model réprésentant le joueur d'échec dasn le tournoi """
 
     def __init__(self, id, firstname, lastname, gender, rating):
 
@@ -20,7 +20,7 @@ class Player:
         return self.last_name
 
     def serialize(self):
-        """serialize a player"""
+        """serialiser un joueur"""
         serialized_player = {
             'first_name': self.first_name,
             'last_name': self.last_name,
