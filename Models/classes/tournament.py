@@ -1,6 +1,6 @@
-from Models.classes import Player
-from Models.classes import Round
-from Models.classes import Match
+from Models.classes.player import Player
+from Models.classes.round import Round
+from Models.classes.match import Match
 
 
 def get_matches(players, adversaires):
@@ -21,7 +21,7 @@ def get_matches(players, adversaires):
 
 
 class Tournament:
-    """ Modele réprésentant un tournoi"""
+    """ Modele réprésentant un tournoi """
 
     def __init__(
         self, id, name, date, time_control, description,
@@ -114,9 +114,9 @@ def calculer_prochain_round(self):
             list_of_matches.append(match)
             next_round = Round(f'round,{self.adversaire_round} |',
                                self.adversaire_round, list_of_matches)
-        self.list_of_round.append(next_round)
-        self.add_daversaires()
-        self.continu_round += 1
+            self.list_of_round.append(next_round)
+            self.add_daversaires()
+            self.continu_round += 1
 
 
 def add_adversaire(self):
