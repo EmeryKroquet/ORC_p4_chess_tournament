@@ -72,3 +72,17 @@ class Tournament:
             'adversaires': self.adversaires
         }
         return seliazed_tournament
+
+
+def add_palyer(self):
+    """Ajouter les joueurs dans notre liste des joueurs
+    """
+    self.players.append(Player)
+    self.score[player.id] = [0, Player.rating]
+    self.adversaires[Player.id] = []
+
+
+def calculer_prochain_round(self):
+    """ Appariement des joueurs pour le prochain tour,
+        en fonction du classement pour le premier tour, puis en fonction du score""
+    """
